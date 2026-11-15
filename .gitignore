@@ -1,0 +1,12 @@
+# 缓存文件
+__pycache__/
+.pytest_cache/
+
+# 报告文件夹
+report/
+allure-result/
+
+# 其他
+.venv/
+venv/
+*.pyc
