@@ -1,0 +1,15 @@
+get_post:
+  - case_name: 查询存在帖子
+    post_id: 1
+    expect_status: 200
+  - case_name: 查询不存在帖子
+    post_id: 99999
+    expect_status: 404
+
+create_post:
+  - case_name: 新增帖子
+    payload:
+      title: "test title"
+      body: "test body"
+      userId: 1
+    expect_status: 201

@@ -1,0 +1,1 @@
+[32mINFO    [0m test_api:test_api.py:21 【查询不存在帖子】 请求地址：https://jsonplaceholder.typicode.com/posts/99999，响应码：404
