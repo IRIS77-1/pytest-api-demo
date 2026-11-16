@@ -1,10 +1,13 @@
 # pytest-api-demo
-基于 Pytest + Requests 的接口自动化测试 Demo
+# FastAPI 文章接口自动化测试项目
+基于 Pytest + Requests + Allure 实现的接口自动化测试，对 FastAPI 后端文章CRUD接口做功能测试。
 
-## 技术栈
-- pytest：测试框架，fixture 前置后置、参数化
-- requests：HTTP 请求库
-- Allure：测试报告（可选）
+## 🛠 技术栈
+- Python 3.x
+- pytest：测试框架
+- requests：发送HTTP请求
+- allure-pytest：生成可视化测试报告
+- MySQL：测试数据库（fixture提供数据库游标）
 
 ## 项目说明
 基于公开模拟接口 jsonplaceholder.typicode.com 完成帖子(posts)接口测试，覆盖场景：
@@ -22,7 +25,22 @@
 
 ├── .gitignore
 
-└── README.md
+├── test_post_db.py      # 自动化测试用例文件
+
+├── allure-results/      # allure 原始结果目录（运行后生成）
+
+├── allure-report/       # allure 静态报告目录（生成后生成）
+
+└── README.md            # 项目说明
+
+## ✅ 测试接口清单
+| 接口 | 请求方法 | 测试场景 |
+| ---- | -------- | -------- |
+| /posts | POST | 新增文章 |
+| /posts | GET | 查询文章列表 |
+| /posts/{id} | GET | 查询单篇文章 |
+| /posts/{id} | PUT | 修改文章 |
+| /posts/{id} | DELETE | 删除文章 |
 
 
 ## 环境部署 & 运行
