@@ -44,12 +44,39 @@
 
 
 ## 环境部署 & 运行
+```
 1. 安装依赖
-pip install -r requirements.txt
-2. 执行测试
-pytest test_api_demo.py -v
-3. 生成 Allure 测试报告
-# 执行用例并保存结果
-pytest test_api_demo.py -v --alluredir=allure-results
-# 打开报告
+```bash
+pip install pytest requests allure-pytest
+```
+
+2. 安装 Allure 命令行工具（需要配置环境变量）
+3. 启动后端 FastAPI 服务：`http://127.0.0.1:8000`
+4. 数据库提前建好 posts 表，pytest fixture `db_cursor` 提供数据库连接
+
+## 运行测试命令
+
+1. 执行用例，收集 allure 结果
+
+```
+pytest test_post_db.py -v -s --alluredir=allure-results
+```
+
+2. 启动可视化报告（自动打开浏览器）
+
+```
 allure serve allure-results
+```
+
+3. 生成静态报告文件
+
+```
+allure generate allure-results -o allure-report --clean
+allure open allure-report
+```
+##  项目特点
+
+- 每个用例前置在数据库插入测试数据并 commit，避免事务锁导致超时
+- 使用 allure feature/story 标签管理模块和测试点
+- 每个用例打印返回结果，方便调试
+- 适配后端真实状态码：新增返回 201
