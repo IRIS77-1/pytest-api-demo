@@ -2,7 +2,7 @@
 # FastAPI 文章接口自动化测试项目
 基于 Pytest + Requests + Allure 实现的接口自动化测试，对 FastAPI 后端文章CRUD接口做功能测试。
 
-## 🛠 技术栈
+##  技术栈
 - Python 3.x
 - pytest：测试框架
 - requests：发送HTTP请求
@@ -33,7 +33,7 @@
 
 └── README.md            # 项目说明
 
-## ✅ 测试接口清单
+##  测试接口清单
 | 接口 | 请求方法 | 测试场景 |
 | ---- | -------- | -------- |
 | /posts | POST | 新增文章 |
